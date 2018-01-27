@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="../static/css/index.css" type="text/css" />
+    </head>
+    <body>
+      <div id = header>
+        <h1>Sort By:<a href= "/sortPrice"class = "link">Price</a><a href="/sortPercent"class = "link">Percent Off</a>
+          <a href="/sortMoneyOff"class = "link">Money Off</a><a href= "/sortOriginalPrice"class = "link">Original Price</a></h1>
+      </div>
+      {%for i in range(0,length)%}
+        <div class = "item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/EBay_former_logo.svg/2000px-EBay_former_logo.svg.png"></img>
+            <h3 class="first"><span class = "old_price">${{data[i][5]}}</span><br>{{data[i][6]}}% off</h3>
+            <h3 class = "second">${{data[i][4]}}<br>${{data[i][7]}} off</h3>
+            <a href = {{data[i][3]}}><p>{{data[i][1]}}</p></a>
+        </div>
+      {%endfor%}
+    </body>
+</html>
