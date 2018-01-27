@@ -11,7 +11,7 @@ app=Flask(__name__)
 @app.route('/')
 def home():
     length = len(crawler.df2)
-    return render_template("index.html", data=crawler.df2, length=length)
+    return render_template("index.html", data=crawler.dataToArray(crawler.df2,"Price"), length=length)
 
 @app.route('/sortPrice')
 def price():
