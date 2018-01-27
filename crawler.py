@@ -7,7 +7,7 @@ def dataToArray(df, key):
     for i in range(0,len(df[key])):
         arr.append(df.iloc[i])
     return arr
-    
+
 #uses quick sort to sort values
 def sortByKey(array, key):
     if len(array[:]) < 2:
@@ -163,5 +163,3 @@ for money in df1["Money Off"]:
         entry = ("%.2f" % money)
         money_off.append(entry)
 df2["Money Off"] = money_off
-
-df2.to_csv("Discount.csv")
